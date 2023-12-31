@@ -3,7 +3,7 @@ document.addEventListener('mousemove', (e) => {
   const mouseY = e.clientY;
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-  const mouseProgressX = Math.min(1, Math.max(-1, (((mouseX - head.offsetWidth) / windowWidth) * 2) - 1));
+  const mouseProgressX = Math.min(1, Math.max(-1, (((mouseX + head.offsetWidth) / windowWidth) * 2) - 1));
   const mouseProgressY = Math.min(1, Math.max(-1, (((mouseY - head.offsetHeight) / windowHeight) * 2) - 1));
 
   // Use the progress value to apply styles or transformations
@@ -70,38 +70,44 @@ function giggle() {
     eyes.src = '/style/images/protogen/eyes_smiley_open.png';
 
     setTimeout(() => {
-      mouth.style.transition = 'scale 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.5)';
+      mouth.style.transition = 'all 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.5)';
       nose.style.transition = 'translate 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.5) 0.025s';
       eyes.style.transition = 'translate 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.5) 0.05s';
       head.style.transition = 'rotate 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.5) 0.075s';
     }, 1);
     setTimeout(() => {
       mouth.style.scale = '1 0.5';
+      mouth.style.translate = '0 0';
       nose.style.translate = '0 -50%';
       eyes.style.translate = '0 -20%';
       head.style.rotate = '1deg';
       setTimeout(() => {
         mouth.style.scale = '1 1';
+        mouth.style.translate = '0 10%';
         nose.style.translate = '0 0';
         eyes.style.translate = '0 0';
         head.style.rotate = '-1deg';
         setTimeout(() => {
           mouth.style.scale = '1 0.5';
+          mouth.style.translate = '0 0';
           nose.style.translate = '0 -50%';
           eyes.style.translate = '0 -20%';
           head.style.rotate = '1deg';
           setTimeout(() => {
             mouth.style.scale = '1 1';
+            mouth.style.translate = '0 10%';
             nose.style.translate = '0 0';
             eyes.style.translate = '0 0';
             head.style.rotate = '-1deg';
             setTimeout(() => {
               mouth.style.scale = '1 0.5';
+              mouth.style.translate = '0 0';
               nose.style.translate = '0 -50%';
               eyes.style.translate = '0 -20%';
               head.style.rotate = '1deg';
               setTimeout(() => {
                 mouth.style.scale = '1 1';
+                mouth.style.translate = '0 10%';
                 nose.style.translate = '0 0';
                 eyes.style.translate = '0 0';
                 head.style.rotate = '0deg';
@@ -121,6 +127,7 @@ function giggle() {
         mouth.style.transition = '';
         nose.style.transition = '';
         mouth.style.scale = '1 1';
+        mouth.style.translate = '0 0';
         mouth.src = '/style/images/protogen/mouth_closed.png';
         isGiggly = false;
       }, 110);
