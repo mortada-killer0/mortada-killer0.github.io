@@ -6,10 +6,12 @@ html, body {
 
 [role="app"] {
   --safezone-width: 128rem;
+  --background: transparent;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .main-row {
