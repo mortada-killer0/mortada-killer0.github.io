@@ -6,10 +6,12 @@ html, body {
 
 [role="app"] {
   --safezone-width: 128rem;
+  --background: transparent;
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .main-row {
@@ -61,4 +63,82 @@ html, body {
   color: var(--text-color);
   font-weight: normal;
   font-size: 1.6rem;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/bg.png) no-repeat center bottom 25% / cover;
+}
+
+.bg-dimmed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
+  mask: url(/images/bg_ground.png) no-repeat center bottom 25% / cover;
+}
+
+.bg-dimmed {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/bg.png) no-repeat center bottom 25% / cover fixed;
+  animation: clouds-mask 15s linear infinite;
+  /* filter: brightness(75%); */
+  mask: url(/images/fg.png) center / cover;
+}
+
+.bg-lit-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mask: url(/images/bg_ground.png) no-repeat center bottom 25% / cover;
+}
+
+.bg-lit {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/bg.png) no-repeat center bottom 25% / cover fixed;
+  filter: brightness(150%) sepia(0.5);
+}
+
+@keyframes clouds-mask {
+  from {
+    mask-position: 0;
+  }
+  to {
+    mask-position: 100vw;
+  }
+}
+
+.clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/fg.png) center top 50% / cover;
+  animation: clouds 15s linear infinite;
+}
+
+@keyframes clouds {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100vw;
+  }
 }
