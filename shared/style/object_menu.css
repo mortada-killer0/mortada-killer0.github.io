@@ -1,0 +1,277 @@
+[role="dialog"][data-type="object"] {
+  display: flex;
+  position: absolute;
+  bottom: calc(1rem + var(--software-buttons-height, 0));
+  left: 50%;
+  flex-direction: column;
+  width: calc(100% - 2rem);
+  max-width: 36rem;
+  max-height: calc(100% - 5rem);
+  translate: -50% 0;
+  border-radius: 2rem;
+  background-color: var(--background);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.1);
+}
+
+[role="dialog"][data-type="object"] > header {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+[role="dialog"][data-type="object"] > header h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+[role="dialog"][data-type="object"] > section {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+[role="dialog"][data-type="object"] > section > header {
+  box-sizing: border-box;
+  min-height: 3rem;
+  margin: 1rem 0 0;
+  padding: 0.4rem 2rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-transform: uppercase;
+}
+
+[role="dialog"][data-type="object"] > section > ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+[role="dialog"][data-type="object"] > section > ul li {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 0.5rem 2rem;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+  transition: background-color 0.3s ease;
+}
+
+[role="dialog"][data-type="object"] > section > ul li:not(.header):focus,
+[role="dialog"][data-type="object"] > section > ul li:not(.header):hover {
+  background-color: var(--item-hover);
+  transition: background-color 0.1s ease;
+}
+
+[role="dialog"][data-type="object"] > section > ul li:not(.header):active {
+  background-color: var(--item-active);
+  transition: background-color 0.1s ease;
+}
+
+[role="dialog"][data-type="object"] > section > ul li:not(.header).selected {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+}
+
+[role="dialog"][data-type="object"] > section > ul li:not(.header)::after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  width: calc(100% - 3rem);
+  height: 100%;
+  border-top: solid 0.1rem var(--separator-color);
+  content: '';
+  pointer-events: none;
+}
+
+[role="dialog"][data-type="object"] > section > ul li:not(.header):hover::after,
+[role="dialog"][data-type="object"] > section > ul li:not(.header):active::after,
+[role="dialog"][data-type="object"] > section > ul li:hover + li::after,
+[role="dialog"][data-type="object"] > section > ul li:active + li::after,
+[role="dialog"][data-type="object"] > section > ul li.header + li::after,
+[role="dialog"][data-type="object"] > section > ul li:not(.header):first-child::after {
+  border-top: none;
+}
+
+[role="dialog"][data-type="object"] > section > ul li p {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  text-overflow: ellipsis;
+}
+
+[role="dialog"][data-type="object"] > section > ul li.selected a,
+[role="dialog"][data-type="object"] > section > ul li.selected p {
+  color: var(--accent-color-plus);
+}
+
+[role="dialog"][data-type="object"] > section > ul li p:not(:first-child) {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  opacity: 0.5;
+}
+
+[role="dialog"][data-type="object"] > menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  height: 7rem;
+  margin: 0;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+[role="dialog"][data-type="object"] > menu button {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  border: none;
+  border-radius: 2rem;
+  outline: none;
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+[role="dialog"][data-type="object"] > menu button.recommend {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+}
+
+[role="dialog"][data-type="object"] > menu button.recommend:hover {
+  background: var(--accent-color) linear-gradient(0deg, var(--accent-color-hover), var(--accent-color-hover));
+}
+
+[role="dialog"][data-type="object"] > menu button.recommend:active {
+  background: var(--accent-color) linear-gradient(0deg, var(--accent-color-active), var(--accent-color-active));
+}
+
+[role="dialog"][data-type="object"] > menu button.danger {
+  background-color: #c00040;
+  color: rgba(255,255,255,0.75);
+}
+
+[role="dialog"][data-type="object"] > menu button.danger:hover {
+  background: #c00040 linear-gradient(0deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+}
+
+[role="dialog"][data-type="object"] > menu button.danger:active {
+  background: #c00040 linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+}
+
+[role="dialog"][data-type="object"] > menu button.dial {
+  background-color: #40a060;
+  color: rgba(255,255,255,0.75);
+}
+
+[role="dialog"][data-type="object"] > menu button.dial:hover {
+  background: #40a060 linear-gradient(0deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+}
+
+[role="dialog"][data-type="object"] > menu button.dial:active {
+  background: #40a060 linear-gradient(0deg, rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+}
+
+[role="dialog"][data-type="object"] > menu button:hover {
+  background-color: var(--item-hover);
+  transition: background-color 0.1s ease;
+}
+
+[role="dialog"][data-type="object"] > menu button:active {
+  background-color: var(--item-active);
+  transition: background-color 0.1s ease;
+}
+
+[role="dialog"][data-type="object"] > menu button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+[role="dialog"][data-type="object"] > menu button[data-icon] {
+  position: relative;
+  padding-inline-start: 4rem;
+}
+
+[role="dialog"][data-type="object"] > menu button[data-icon].previous {
+  padding-inline-start: 4rem;
+  padding-inline-end: 1.5rem;
+}
+html[dir="ltr"] [role="dialog"][data-type="object"] > menu button[data-icon].previous {
+  text-align: right;
+}
+html[dir="rtl"] [role="dialog"][data-type="object"] > menu button[data-icon].previous {
+  text-align: left;
+}
+
+[role="dialog"][data-type="object"] > menu button[data-icon].next {
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 4rem;
+}
+html[dir="ltr"] [role="dialog"][data-type="object"] > menu button[data-icon].next {
+  text-align: left;
+}
+html[dir="rtl"] [role="dialog"][data-type="object"] > menu button[data-icon].next {
+  text-align: right;
+}
+
+[role="dialog"][data-type="object"] > menu button[data-icon]::before {
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  font-size: 2rem;
+}
+html[dir="ltr"] [role="dialog"][data-type="object"] > menu button[data-icon]::before {
+  left: 1.5rem;
+}
+html[dir="rtl"] [role="dialog"][data-type="object"] > menu button[data-icon]::before {
+  right: 1.5rem;
+}
+
+html[dir="ltr"] [role="dialog"][data-type="object"] > menu button[data-icon].next::before {
+  right: 1rem;
+  left: unset;
+}
+html[dir="rtl"] [role="dialog"][data-type="object"] > menu button[data-icon].next::before {
+  right: unset;
+  left: 1rem;
+}
+
+@media screen and (min-width: 768px),
+       screen and (orientation: landscape) {
+  [role="dialog"][data-type="object"] {
+    bottom: 50%;
+    left: 50%;
+    translate: -50% 50%;
+  }
+}

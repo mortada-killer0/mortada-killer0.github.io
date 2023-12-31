@@ -1,0 +1,11 @@
+.notices {
+  max-width: 60rem;
+  margin: 0 auto 1.5rem;
+}
+
+.notices ul li {
+  margin: 0 0 0.5rem;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}

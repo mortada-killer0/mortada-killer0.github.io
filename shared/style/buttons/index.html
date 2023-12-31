@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../buttons.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 10px;
+      font-family: sans-serif;
+    }
+    section {
+      background-color: var(--background);
+      padding: 1.5rem;
+    }
+    header {
+      padding: 1rem 2rem;
+      color: var(--text-color-faded);
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: var(--background-plus);
+    }
+  </style>
+</head>
+<body>
+  <header>Regular</header>
+  <section>
+    <button>Default</button>
+    <button class="recommend">Recommend</button>
+    <button class="danger">Danger</button>
+  </section>
+  <header>Disabled</header>
+  <section>
+    <button disabled>Default</button>
+    <button disabled class="recommend">Recommend</button>
+    <button disabled class="danger">Danger</button>
+  </section>
+  <header>Row</header>
+  <section>
+    <div class="buttons">
+      <button data-icon="left">Previous</button>
+      <button class="recommend" data-icon="right">Next</button>
+    </div>
+    <div class="buttons">
+      <button>Cancel</button>
+      <button class="danger">Delete</button>
+    </div>
+  </section>
+</body>
+</html>

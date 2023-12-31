@@ -1,0 +1,98 @@
+.bb-tablist {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6.5rem;
+  padding-bottom: var(--software-buttons-height);
+  background-color: var(--background-minus);
+}
+
+.bb-tablist ul {
+  display: flex;
+  width: calc(100% - 1rem);
+  max-width: 75.8rem;
+  height: 6.5rem;
+  margin: 0 auto;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.bb-tablist ul li {
+  flex-grow: 1;
+  width: calc(100% - 1rem);
+  height: 5.5rem;
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.bb-tablist ul li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bb-tablist ul li > a:hover {
+  background-color: var(--item-hover);
+}
+
+.bb-tablist ul li > a:active {
+  background-color: var(--item-active);
+}
+
+.bb-tablist ul li > a > span[data-icon] {
+  display: inline-flex;
+  position: relative;
+  margin: 0.4rem 0 0.2rem;
+  padding: 0.4rem 1.5rem;
+  overflow: hidden;
+  border-radius: 3rem;
+  background-color: var(--item-plus);
+}
+
+.bb-tablist ul li > a > span[data-icon]::before {
+  z-index: 1;
+  position: relative;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.bb-tablist ul li > a.selected > span[data-icon]::before {
+  background-color: var(--accent-color-plus);
+}
+
+.bb-tablist ul li > a > span[data-icon]::after {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-radius: 3rem;
+  background-color: var(--accent-color);
+  content: '';
+  color: var(--accent-color-plus);
+  opacity: 0;
+  transition: transform 0.01s ease 0.3s, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bb-tablist ul li > a.selected > span[data-icon]::after {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}

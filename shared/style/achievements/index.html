@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../layout.css">
+  <link rel="stylesheet" type="text/css" href="../headers.css">
+  <link rel="stylesheet" type="text/css" href="../achievements.css">
+  <script defer type="text/javascript" src="../../js/panels.js"></script>
+  <script>
+    document.addEventListener('keydown', () => {
+      document.querySelector('.achievement').classList.toggle('visible');
+    });
+  </script>
+</head>
+<body>
+  <div class="app">
+    <div class="panel">
+      <div class="content lists">
+        <div class="achievement">
+          <div class="content">
+            <img src="" alt="" class="keyart">
+            <div class="text-holder">
+              <div class="title">Achievement Gained</div>
+              <div class="name">Unlawful Intersection</div>
+              <div class="points">30</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

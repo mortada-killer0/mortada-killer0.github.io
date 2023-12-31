@@ -1,0 +1,91 @@
+[role="counter"] {
+  display: flex;
+  width: max-content;
+  direction: ltr;
+}
+
+[role="counter"] .character {
+  position: relative;
+}
+
+[role="counter"] .character > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+[role="counter"] .character > span.slide-up-from {
+  transform-origin: bottom;
+  animation: slideUpFrom 0.5s cubic-bezier(0.5, 0.8, 0, 1.1) both;
+}
+
+[role="counter"] .character > span.slide-up-to {
+  transform-origin: top;
+  animation: slideUpTo 0.5s cubic-bezier(0.5, 0.8, 0, 1.1) both;
+}
+
+[role="counter"] .character > span.slide-down-from {
+  transform-origin: top;
+  animation: slideDownFrom 0.5s cubic-bezier(0.5, 0.8, 0, 1.1) both;
+}
+
+[role="counter"] .character > span.slide-down-to {
+  transform-origin: bottom;
+  animation: slideDownTo 0.5s cubic-bezier(0.5, 0.8, 0, 1.1) both;
+}
+
+@keyframes slideUpFrom {
+  0% {
+    transform: scale(0.75) translateY(3rem);
+    filter: blur(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpTo {
+  0% {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.75) translateY(-3rem);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownFrom {
+  0% {
+    transform: scale(0.75) translateY(-3rem);
+    filter: blur(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownTo {
+  0% {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.75) translateY(3rem);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,278 @@
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="time"],
+input[type="date"],
+input[type="timedate"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  outline: none;
+  background-color: var(--background-minus);
+  box-shadow: inset 0 -0.1rem 0 #858585;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 4rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="username"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+input[type="time"]:focus,
+input[type="date"]:focus,
+input[type="timedate"]:focus {
+  box-shadow: inset 0 -0.3rem 0 var(--accent-color);
+}
+
+.lists ul li input[type="text"],
+.lists ul li input[type="margin"],
+.lists ul li input[type="username"],
+.lists ul li input[type="email"],
+.lists ul li input[type="password"],
+.lists ul li input[type="search"],
+.lists ul li input[type="url"],
+.lists ul li input[type="time"],
+.lists ul li input[type="date"],
+.lists ul li input[type="timedate"] {
+  margin: 0;
+}
+
+.pack-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.3rem;
+}
+
+/* Search box */
+.bb-search {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  padding-inline-start: 5.5rem;
+  border-radius: 2rem;
+  background-color: var(--item-plus);
+  transition: padding 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.bb-search:focus-within {
+  padding-inline-start: 0;
+  padding-inline-end: 5.5rem;
+}
+
+.bb-search input[type="text"],
+.bb-search input[type="number"],
+.bb-search input[type="username"],
+.bb-search input[type="email"],
+.bb-search input[type="password"],
+.bb-search input[type="search"],
+.bb-search input[type="url"],
+.bb-search input[type="time"],
+.bb-search input[type="date"],
+.bb-search input[type="timedate"] {
+  flex-grow: 1;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  transition: padding 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.bb-search input[type="text"]::placeholder,
+.bb-search input[type="number"]::placeholder,
+.bb-search input[type="username"]::placeholder,
+.bb-search input[type="email"]::placeholder,
+.bb-search input[type="password"]::placeholder,
+.bb-search input[type="search"]::placeholder,
+.bb-search input[type="url"]::placeholder,
+.bb-search input[type="time"]::placeholder,
+.bb-search input[type="date"]::placeholder,
+.bb-search input[type="timedate"]::placeholder {
+  color: var(--text-color-faded);
+}
+
+.bb-search:focus-within input[type="text"]:first-child,
+.bb-search:focus-within input[type="number"]:first-child,
+.bb-search:focus-within input[type="username"]:first-child,
+.bb-search:focus-within input[type="email"]:first-child,
+.bb-search:focus-within input[type="password"]:first-child,
+.bb-search:focus-within input[type="search"]:first-child,
+.bb-search:focus-within input[type="url"]:first-child,
+.bb-search:focus-within input[type="time"]:first-child,
+.bb-search:focus-within input[type="date"]:first-child,
+.bb-search:focus-within input[type="timedate"]:first-child {
+  padding-inline-start: 1.5rem;
+}
+
+.bb-search button {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: var(--text-color);
+  line-height: 4rem;
+}
+
+.bb-search button[type="reset"] {
+  visibility: hidden;
+  margin: 0 -2rem;
+  opacity: 0;
+  transition: margin 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bb-search:focus-within button[type="reset"] {
+  visibility: visible;
+  margin: 0;
+  opacity: 1;
+  transition: margin 0.1s ease, opacity 0.1s ease, visibility 0.1s ease;
+}
+
+.bb-search button[type="submit"] {
+  position: absolute;
+  top: 0;
+  width: 5rem;
+  height: 3rem;
+  margin: 0.5rem;
+  margin-inline-start: 0;
+  padding: 0 1.5rem;
+  background-color: transparent;
+  color: var(--text-color-faded);
+  line-height: 3rem;
+  transition: left 0.5s cubic-bezier(1, 0, 0, 1), right 0.5s cubic-bezier(1, 0, 0, 1), background-color 0.5s cubic-bezier(1, 0, 0, 1), color 0.5s cubic-bezier(1, 0, 0, 1);
+}
+html[dir="ltr"] .bb-search button[type="submit"] {
+  left: 0.5rem;
+}
+html[dir="rtl"] .bb-search button[type="submit"] {
+  right: 0.5rem;
+}
+
+.bb-search:focus-within button[type="submit"] {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+}
+html[dir="ltr"] .bb-search:focus-within button[type="submit"] {
+  left: calc(100% - 5rem - 0.5rem);
+}
+html[dir="rtl"] .bb-search:focus-within button[type="submit"] {
+  right: calc(100% - 5rem - 0.5rem);
+}
+
+.bb-search button[data-icon]::before {
+  position: static;
+  height: 4rem;
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+.bb-search button[type="submit"][data-icon]::before {
+  height: 3rem;
+  line-height: 3rem;
+}
+
+/* Message box */
+.bb-messagebox {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 4.6rem;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  border-radius: 2.5rem;
+  background-color: var(--item-plus);
+}
+
+.bb-messagebox input[type="text"],
+.bb-messagebox input[type="number"],
+.bb-messagebox input[type="username"],
+.bb-messagebox input[type="email"],
+.bb-messagebox input[type="password"],
+.bb-messagebox input[type="search"],
+.bb-messagebox input[type="url"],
+.bb-messagebox input[type="time"],
+.bb-messagebox input[type="date"],
+.bb-messagebox input[type="timedate"] {
+  flex-grow: 1;
+  height: 4.6rem;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  line-height: 4.6rem;
+}
+
+.bb-messagebox input[type="text"]:first-child,
+.bb-messagebox input[type="number"]:first-child,
+.bb-messagebox input[type="username"]:first-child,
+.bb-messagebox input[type="email"]:first-child,
+.bb-messagebox input[type="password"]:first-child,
+.bb-messagebox input[type="search"]:first-child,
+.bb-messagebox input[type="url"]:first-child,
+.bb-messagebox input[type="time"]:first-child,
+.bb-messagebox input[type="date"]:first-child,
+.bb-messagebox input[type="timedate"]:first-child {
+  padding-inline-start: 1.5rem;
+}
+
+.bb-messagebox input[type="text"]::placeholder,
+.bb-messagebox input[type="number"]::placeholder,
+.bb-messagebox input[type="username"]::placeholder,
+.bb-messagebox input[type="email"]::placeholder,
+.bb-messagebox input[type="password"]::placeholder,
+.bb-messagebox input[type="search"]::placeholder,
+.bb-messagebox input[type="url"]::placeholder,
+.bb-messagebox input[type="time"]::placeholder,
+.bb-messagebox input[type="date"]::placeholder,
+.bb-messagebox input[type="timedate"]::placeholder {
+  color: var(--text-color-faded);
+}
+
+.bb-messagebox button {
+  flex-shrink: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0.5rem 0;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  color: var(--text-color);
+  line-height: 3.6rem;
+}
+
+.bb-messagebox button:hover {
+  background-color: var(--item-hover);
+}
+
+.bb-messagebox button:active {
+  background-color: var(--item-active);
+  color: var(--text-color-faded);
+}
+
+.bb-messagebox button[type="submit"] {
+  width: 5rem;
+  height: 3.6rem;
+  margin-inline-start: 0;
+  padding: 0 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+  line-height: 3.6rem;
+}
+
+.bb-messagebox button[data-icon]::before {
+  position: static;
+  height: 3.6rem;
+  font-size: 2rem;
+  line-height: 3.6rem;
+}

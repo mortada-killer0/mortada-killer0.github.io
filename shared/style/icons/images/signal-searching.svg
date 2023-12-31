@@ -1,0 +1,41 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 13V11" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bar0"/>
+<path d="M5 13V9" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bar1"/>
+<path d="M8 13V7" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bar2"/>
+<path d="M11 13V5" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bar3"/>
+<path d="M14 13V3" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bar4"/>
+<style>
+  .bar0 {
+    animation: bar 1s cubic-bezier(0.5, 0.8, 0, 1.1) infinite;
+    transform-origin: 0 14px;
+  }
+  .bar1 {
+    animation: bar 1s cubic-bezier(0.5, 0.8, 0, 1.1) infinite 0.1s;
+    transform-origin: 0 14px;
+  }
+  .bar2 {
+    animation: bar 1s cubic-bezier(0.5, 0.8, 0, 1.1) infinite 0.2s;
+    transform-origin: 0 14px;
+  }
+  .bar3 {
+    animation: bar 1s cubic-bezier(0.5, 0.8, 0, 1.1) infinite 0.3s;
+    transform-origin: 0 14px;
+  }
+  .bar4 {
+    animation: bar 1s cubic-bezier(0.5, 0.8, 0, 1.1) infinite 0.4s;
+    transform-origin: 0 14px;
+  }
+  @keyframes bar {
+    0%, 100% {
+      transform: scaleY(0);
+    }
+    25% {
+      stroke-opacity: 1;
+    }
+    50% {
+      transform: scaleY(1);
+      stroke-opacity: 0.5;
+    }
+  }
+</style>
+</svg>

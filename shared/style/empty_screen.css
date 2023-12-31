@@ -1,0 +1,87 @@
+.bb-emptyscreen {
+  display: flex;
+  visibility: hidden;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(0.9);
+  background-color: var(--background);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bb-emptyscreen.visible {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.bb-emptyscreen > .container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 3rem);
+  max-width: calc(var(--safezone-width) - 3rem);
+  gap: 1rem;
+}
+
+.bb-emptyscreen > .container .image-holder {
+  width: 100%;
+  height: 10rem;
+}
+
+.bb-emptyscreen > .container .image-holder > img {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.bb-emptyscreen > .container .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bb-emptyscreen > .container .content > .text-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bb-emptyscreen > .container .content > .text-holder h1 {
+  width: 100%;
+  margin: 0;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.bb-emptyscreen > .container .content > .text-holder p {
+  width: 100%;
+  margin: 0 0 1rem;
+  color: var(--text-color-faded);
+  font-weight: normal;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.bb-emptyscreen > .container .content > menu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.bb-emptyscreen > .container .content > menu button {
+  width: max-content;
+  padding: 0 3rem;
+}

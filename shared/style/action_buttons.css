@@ -1,0 +1,69 @@
+.bb-actions {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  bottom: var(--software-buttons-height, 0);
+  flex-direction: column;
+  width: 7rem;
+  margin: 0;
+  padding: 1rem;
+  gap: 1rem;
+}
+html[dir="ltr"] .bb-actions {
+  right: 0;
+}
+html[dir="rtl"] .bb-actions {
+  left: 0;
+}
+
+.bb-actions > button {
+  width: 5rem;
+  height: 5rem;
+  margin: 0;
+  padding: 0 1.3rem;
+  border-radius: 50%;
+  background-color: var(--background-plus);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  font-size: 2.4rem;
+  line-height: 5rem;
+  transition: transform 0.3s ease;
+}
+
+.bb-actions > button:hover {
+  background: var(--background-plus) linear-gradient(0deg, var(--item-hover), var(--item-hover));
+}
+
+.bb-actions > button:active {
+  transform: scale(0.9);
+  background: var(--background-plus) linear-gradient(0deg, var(--item-active), var(--item-active));
+  transition: transform 0.1s ease;
+}
+
+.bb-actions > button.recommend {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+}
+
+.bb-actions > button.recommend:hover {
+  background: var(--accent-color) linear-gradient(0deg, var(--accent-color-hover), var(--accent-color-hover));
+}
+
+.bb-actions > button.recommend:active {
+  background: var(--accent-color) linear-gradient(0deg, var(--accent-color-active), var(--accent-color-active));
+  color: var(--accent-color-minus);
+}
+
+.bb-actions > button[data-icon]::before {
+  position: static;
+  width: 2.4rem;
+  height: 5rem;
+  font-size: 2.4rem;
+  line-height: 5rem;
+  transition: transform 0.3s ease;
+}
+
+.bb-actions > button[data-icon]:active::before {
+  transform: scale(1.2);
+  transition: transform 0.1s ease;
+}

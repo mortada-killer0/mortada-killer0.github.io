@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transitions</title>
+  <link rel="stylesheet" type="text/css" href="../transitions.css">
+  <style>
+    .panel1 {
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      width: 25%;
+      height: 25%;
+      background-color: rgba(0,255,0,0.25);
+      border-radius: 20px;
+    }
+    .panel2 {
+      position: absolute;
+      left: 20%;
+      top: 20%;
+      width: 75%;
+      height: 75%;
+      background-color: rgba(0,0,255,0.25);
+      border-radius: 20px;
+    }
+  </style>
+  <script defer type="text/javascript" src="../../js/transitions.js"></script>
+  <script defer>
+    var b = false;
+    setInterval(() => {
+      if (b) {
+        Transitions.scale(document.querySelector('.panel1'), document.querySelector('.panel2'));
+      } else {
+        Transitions.scale(document.querySelector('.panel2'), document.querySelector('.panel1'));
+      }
+      b = !b;
+    }, 1000);
+  </script>
+</head>
+<body>
+  <div class="panel1"></div>
+  <div class="panel2"></div>
+</body>
+</html>

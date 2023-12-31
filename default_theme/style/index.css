@@ -1,0 +1,131 @@
+:root {
+  --accent-color-primary-r: 0;
+  --accent-color-primary-g: 97;
+  --accent-color-primary-b: 224;
+  --accent-color-secondary-r: 0;
+  --accent-color-secondary-g: 97;
+  --accent-color-secondary-b: 224;
+  --accent-intensity: 15;
+
+  --accent-color: rgb(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b));
+  --accent-color-primary: var(--accent-color);
+  --accent-color-secondary: rgb(var(--accent-color-secondary-r), var(--accent-color-secondary-g), var(--accent-color-secondary-b));
+
+  --accent-color-plus: rgba(255, 255, 255, 0.75);
+  --accent-color-minus: rgba(255, 255, 255, 0.5);
+  --accent-color-hover: rgba(255, 255, 255, 0.05);
+  --accent-color-active: rgba(255, 255, 255, 0.1);
+
+  --background: rgb(calc(240 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(240 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(240 + ((var(--accent-color-primary-b) / 255) * 15)));
+  --background-plus: #ffffff;
+  /* --background-plus: rgba(255, 255, 255, 0.1); */
+  --background-minus: rgb(calc(224 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(224 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(224 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))));
+
+  --acrylic-background: rgba(calc(224 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(224 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(224 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))), 0.5);
+  --acrylic-background-plus: rgba(255, 255, 255, 0.75);
+
+  --text-color: rgb(calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))));
+  --text-color-faded: rgba(calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(51 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), 0.5);
+
+  --item-plus: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --item-hover: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --item-hover-plus: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --item-active: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --item-active-plus: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.3);
+
+  --headerbar-r: calc(240 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity)));
+  --headerbar-g: calc(240 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity)));
+  --headerbar-b: calc(240 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity)));
+  --header-background: rgba(var(--headerbar-r), var(--headerbar-g), var(--headerbar-b), 0.75);
+
+  --button-normal: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --button-hover: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --button-active: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.3);
+
+  --switch-normal: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --switch-hover: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --switch-active: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.3);
+
+  --checkbox-normal: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --checkbox-hover: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --checkbox-active: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.3);
+
+  --radio-normal: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.1);
+  --radio-hover: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.2);
+  --radio-active: rgba(var(--accent-color-primary-r), var(--accent-color-primary-g), var(--accent-color-primary-b), 0.3);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --accent-color-primary-r: 128;
+    --accent-color-primary-g: 194;
+    --accent-color-primary-b: 255;
+    --accent-color-secondary-r: 128;
+    --accent-color-secondary-g: 194;
+    --accent-color-secondary-b: 255;
+    --accent-intensity: 24;
+
+    --accent-color-plus: rgba(0, 0, 0, 0.75);
+    --accent-color-minus: rgba(0, 0, 0, 0.5);
+    --accent-color-hover: rgba(0, 0, 0, 0.05);
+    --accent-color-active: rgba(0, 0, 0, 0.1);
+
+    --background: rgb(calc(4 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(4 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(4 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))));
+    --background-plus: rgb(calc(34 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(34 + ((var(--accent-color-secondary-g) / 255) * var(--accent-intensity))), calc(34 + ((var(--accent-color-secondary-b) / 255) * var(--accent-intensity))));
+    /* --background-plus: rgba(255, 255, 255, 0.1); */
+    --background-minus: rgb(calc(19 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(19 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(19 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))));
+
+    --acrylic-background: rgba(calc(var(--accent-intensity) + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(var(--accent-intensity) + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(var(--accent-intensity) + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))), 0.5);
+    --acrylic-background-plus: rgba(calc(33 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity))), calc(33 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity))), calc(33 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity))), 0.75);
+
+    --text-color: rgb(calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))));
+    --text-color-faded: rgba(calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), calc(231 + ((var(--accent-color-secondary-r) / 255) * var(--accent-intensity))), 0.5);
+
+    --headerbar-r: calc(4 + ((var(--accent-color-primary-r) / 255) * var(--accent-intensity)));
+    --headerbar-g: calc(4 + ((var(--accent-color-primary-g) / 255) * var(--accent-intensity)));
+    --headerbar-b: calc(4 + ((var(--accent-color-primary-b) / 255) * var(--accent-intensity)));
+  }
+}
+
+[data-red-point="true"] {
+  --accent-color: #ff0000;
+  --accent-color-plus: rgba(0, 0, 0, 0.75);
+  --accent-color-hover: rgba(0, 0, 0, 0.05);
+  --accent-color-active: rgba(0, 0, 0, 0.1);
+
+  --background: #000;
+  --background-plus: #101010;
+  --background-minus: #080808;
+
+  --acrylic-background: rgba(8, 8, 8, 0.5);
+  --acrylic-background-plus: rgba(16, 16, 16, 0.75);
+
+  --text-color: #ff0000;
+  --text-color-faded: rgba(255, 0, 0, 0.5);
+
+  --item-plus: rgba(255, 0, 0, 0.1);
+  --item-hover: rgba(255, 0, 0, 0.1);
+  --item-hover-plus: rgba(255, 0, 0, 0.2);
+  --item-active: rgba(255, 0, 0, 0.2);
+  --item-active-plus: rgba(255, 0, 0, 0.3);
+
+  --headerbar-r: 128;
+  --headerbar-g: 0;
+  --headerbar-b: 0;
+
+  --button-normal: #101010;
+  --button-hover: #201010;
+  --button-active: #301010;
+
+  --switch-normal: #080808;
+  --switch-hover: #180808;
+  --switch-active: #280808;
+
+  --checkbox-normal: #080808;
+  --checkbox-hover: #180808;
+  --checkbox-active: #280808;
+
+  --radio-normal: #080808;
+  --radio-hover: #180808;
+  --radio-active: #280808;
+}

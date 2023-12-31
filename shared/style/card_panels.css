@@ -1,0 +1,73 @@
+section[role="card"] {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.3s, visibility 0.5s;
+}
+
+section[role="card"].visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.1s ease, visibility 0.1s;
+}
+
+section[role="card"] > .card {
+  position: fixed;
+  top: calc(4.5rem + var(--statusbar-height));
+  left: 50%;
+  width: 100%;
+  max-width: 600px;
+  height: calc(100% - 4.5rem - var(--statusbar-height));
+  overflow: hidden;
+  transform: translateY(100%);
+  translate: -50% 0;
+  border-radius: 2.5rem 2.5rem 0 0;
+  background-color: var(--background);
+  box-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+section[role="card"].visible > .card {
+  transform: translateY(calc(100% * var(--card-progress, 0)));
+}
+
+section[role="card"] > .card > .handle {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+section[role="card"] > .card > .handle::before {
+  display: block;
+  width: 5rem;
+  height: 0.5rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  background-color: var(--item-plus);
+  content: '';
+}
+
+section[role="card"] > .card > .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section[role="card"].dragging > .card > .content {
+  pointer-events: none;
+}
+
+section[role="card"] > .card .panel {
+  --statusbar-height: 0rem;
+}

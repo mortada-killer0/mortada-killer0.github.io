@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../layout.css">
+  <link rel="stylesheet" type="text/css" href="../headers.css">
+  <link rel="stylesheet" type="text/css" href="../buttons.css">
+  <link rel="stylesheet" type="text/css" href="../empty_screen.css">
+  <script defer type="text/javascript" src="../../js/panels.js"></script>
+  <script defer type="text/javascript" src="../../js/spatial_navigation.js"></script>
+  <script defer>
+    SpatialNavigation.init();
+    SpatialNavigation.add({
+      selector: '.tablist a, .tablist button, .tablist .lists ul li, .visible a, .visible button, .visible .lists ul li, .visible .lists ul li input'
+    });
+    SpatialNavigation.makeFocusable();
+    SpatialNavigation.focus();
+  </script>
+</head>
+<body>
+  <main role="app">
+    <section class="visible" role="panel">
+      <header>
+        <div class="safezone">
+          <a href="#" data-icon="menu"></a>
+          <h1>App Name</h1>
+          <menu role="toolbar">
+            <a href="#" data-icon="search"></a>
+          </menu>
+        </div>
+      </header>
+
+      <div class="content lists">
+        <div class="bb-emptyscreen">
+          <div class="container">
+            <div class="image-holder">
+              <img src="" alt="">
+            </div>
+            <div class="content">
+              <div class="text-holder">
+                <h1>Empty Screen</h1>
+                <p>Empty description</p>
+              </div>
+              <menu>
+                <button class="recommend">Try Again</button>
+              </menu>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-softkeys">
+        <div class="softkey">Options</div>
+        <div class="softkey">Select</div>
+        <div class="softkey">Search</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

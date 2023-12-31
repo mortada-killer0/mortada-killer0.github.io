@@ -1,0 +1,195 @@
+.bb-menu {
+  visibility: hidden;
+  z-index: 150;
+  position: absolute;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-1.5rem);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: var(--acrylic-background-plus);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bb-menu.visible {
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bb-menu ul {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.bb-menu ul li:not(.separator, .nav) {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  padding: 0 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):hover {
+  background-color: var(--item-hover);
+  transition: background-color 0.1s ease;
+}
+
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):active,
+.bb-menu ul li:not(.separator, .nav).active {
+  background-color: var(--item-active);
+  transition: background-color 0.1s ease;
+}
+
+.bb-menu ul li:not(.separator, .nav)::after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  width: calc(100% - 3rem);
+  height: 100%;
+  border-top: solid 0.1rem var(--separator-color);
+  content: '';
+  pointer-events: none;
+}
+
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):hover::after,
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):active::after,
+.bb-menu ul li:not(.separator, .nav).active::after,
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):hover + li::after,
+.bb-menu:not(.dragging) ul li:not(.separator, .nav):active + li::after,
+.bb-menu ul li:not(.separator, .nav).active + li::after,
+.bb-menu ul li:not(.separator, .nav):first-child::after,
+.bb-menu ul .separator + li::after {
+  border-top: none !important;
+}
+
+.bb-menu ul li[disabled]:not(.separator, .nav) {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.bb-menu ul li[data-icon]:not(.separator, .nav) {
+  -moz-padding-start: 4rem;
+  padding-inline-start: 4rem;
+}
+
+.bb-menu ul li[data-icon]:not(.separator, .nav):before {
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 100%;
+  font-size: 2rem;
+}
+html[dir='ltr'] .bb-menu ul li[data-icon]:not(.separator, .nav):before {
+  left: 1rem;
+}
+html[dir='rtl'] .bb-menu ul li[data-icon]:not(.separator, .nav):before {
+  right: 1rem;
+}
+
+.bb-menu ul li:not(.separator, .nav) > .new {
+  margin-inline-start: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, var(--item-plus), var(--item-plus) 50%, var(--item-active) 75%, var(--item-plus));
+  background-position: 0 0;
+  background-size: 200%;
+  color: var(--accent-color);
+  line-height: 2.2rem;
+  animation: context-menu-new 2s ease;
+}
+
+@keyframes context-menu-new {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.bb-menu ul li:not(.separator, .nav):hover > .new {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
+  animation: none;
+}
+
+.bb-menu ul li:not(.separator, .nav) > .keybind {
+  margin-inline-start: auto;
+  padding-inline-start: 1.5rem;
+  color: var(--text-color-faded);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.bb-menu ul .separator {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0;
+  border-radius: 1rem;
+  background: var(--separator-color);
+  list-style: none;
+  pointer-events: none;
+}
+
+.bb-menu ul .nav {
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bb-menu ul .nav > ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bb-menu ul .nav > ul li {
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  padding: 0 1rem !important;
+  line-height: 4rem;
+  list-style: none;
+}
+
+.bb-menu ul .nav > ul li[data-icon] {
+  font-size: 0 !important;
+}
+
+.bb-menu ul .nav > ul li[data-icon]::before {
+  position: static !important;
+}
+
+.bb-menu ul .nav > ul li::after {
+  display: none;
+}

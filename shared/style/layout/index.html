@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../layout.css">
+  <link rel="stylesheet" type="text/css" href="../headers.css">
+  <link rel="stylesheet" type="text/css" href="../lists.css">
+  <link rel="stylesheet" type="text/css" href="../buttons.css">
+  <link rel="stylesheet" type="text/css" href="../switches.css">
+  <link rel="stylesheet" type="text/css" href="../checkboxes.css">
+  <link rel="stylesheet" type="text/css" href="../radios.css">
+  <link rel="stylesheet" type="text/css" href="../input_areas.css">
+  <link rel="stylesheet" type="text/css" href="../chrome.css">
+  <script defer type="text/javascript" src="../../js/panels.js"></script>
+</head>
+<body>
+  <main role="app">
+    <section class="visible" role="panel">
+      <header>
+        <div class="safezone">
+          <a href="#" data-icon="menu"></a>
+          <h1>App Name</h1>
+          <menu role="toolbar">
+            <a href="#" data-icon="search"></a>
+          </menu>
+        </div>
+      </header>
+
+      <header>
+        <h3>This is a <span class="active">active</span> subheader</h3>
+      </header>
+
+      <div class="content lists">
+        <header>List Items</header>
+        <ul>
+          <li>
+            <p>I'm clickable</p>
+          </li>
+          <li class="noclick">
+            <p>I'm not clickable</p>
+          </li>
+          <li>
+            <p>I'm clickable too</p>
+            <p>And also with a description</p>
+          </li>
+          <li>
+            <p>I'm also clickable</p>
+            <p>And also with a description</p>
+            <p>And a another</p>
+          </li>
+          <li>No paragraph item</li>
+        </ul>
+
+        <header>Buttons</header>
+        <ul>
+          <li>
+            <button>Default</button>
+          </li>
+          <li>
+            <button class="recommend">Recommend</button>
+          </li>
+          <li>
+            <button class="danger">Danger</button>
+          </li>
+        </ul>
+
+        <header>Switches</header>
+        <ul>
+          <li>
+            <div class="pack-switch">
+              <label for="switch1">
+                <p>Switch off</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch1" id="switch1">
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-switch">
+              <label for="switch2">
+                <p>Switch on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch2" id="switch2" checked>
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <header>Checkboxes</header>
+        <ul>
+          <li>
+            <div class="pack-checkbox">
+              <label for="checkbox1">
+                <p>Checkbox off</p>
+              </label>
+              <span>
+                <input type="checkbox" name="checkbox1" id="checkbox1">
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-checkbox">
+              <label for="checkbox2">
+                <p>Checkbox on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="checkbox2" id="checkbox2" checked>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-checkbox danger">
+              <label for="checkbox3">
+                <p>Danger checkbox on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="checkbox3" id="checkbox3" checked>
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <header>Radios</header>
+        <ul>
+          <li>
+            <div class="pack-radio">
+              <label for="radio1">
+                <p>Radio off</p>
+              </label>
+              <span>
+                <input type="radio" name="radio" id="radio1">
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-radio">
+              <label for="radio2">
+                <p>Radio on</p>
+              </label>
+              <span>
+                <input type="radio" name="radio" id="radio2" checked>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-radio danger">
+              <label for="radio3">
+                <p>Danger radio</p>
+              </label>
+              <span>
+                <input type="radio" name="radio" id="radio3">
+              </span>
+            </div>
+          </li>
+        </ul>
+
+        <header>Flex HBox</header>
+        <ul class="hbox">
+          <li class="noclick start"><p>Start</p></li>
+          <li class="noclick center"><p>Center</p></li>
+          <li class="noclick end"><p>End</p></li>
+        </ul>
+        <header>Flex VBox</header>
+        <ul class="vbox">
+          <li class="noclick start"><p>Start</p></li>
+          <li class="noclick center"><p>Center</p></li>
+          <li class="noclick end"><p>End</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

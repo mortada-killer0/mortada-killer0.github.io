@@ -1,0 +1,28 @@
+.bb-snackbar {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: calc(var(--software-buttons-height, 0) + 5rem);
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  padding: 0.9rem 2rem;
+  translate: -50% 0;
+  border-radius: 2rem;
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: var(--acrylic-background-plus);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.2);
+  line-height: 2.2rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bb-snackbar.hidden {
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+.bb-snackbar .label {
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}

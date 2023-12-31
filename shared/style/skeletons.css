@@ -1,0 +1,70 @@
+.pack-skeleton {
+  border-radius: 1rem;
+  background-size: 200%;
+  background-color: var(--background-plus);
+  color: transparent !important;
+  user-select: none;
+}
+html[dir="ltr"] .pack-skeleton {
+  background-image: repeating-linear-gradient(90deg, var(--background-plus), var(--background) 90%, var(--background-plus));
+  animation: 1.5s skeleton-move-right linear infinite;
+}
+html[dir="rtl"] .pack-skeleton {
+  background-image: repeating-linear-gradient(-90deg, var(--background-plus), var(--background) 90%, var(--background-plus));
+  animation: 1.5s skeleton-move-left linear infinite;
+}
+
+.pack-skeleton > *,
+.pack-skeleton[data-icon]::before {
+  visibility: hidden;
+}
+
+[role="header"] h1.pack-skeleton {
+  height: 4rem;
+  margin: 0.5rem 0;
+  transform: none !important;
+  line-height: 4rem;
+}
+
+header[role="header"].compact h1 {
+  height: 4rem;
+  line-height: 4rem;
+}
+
+.lists header.pack-skeleton {
+  width: calc(100% - 5rem);
+  max-width: calc(var(--safezone-width) - 5rem);
+  /* width: 30%; */
+  height: 2rem;
+  margin: 0.5rem auto;
+  line-height: 2rem;
+}
+
+.lists ul li p.pack-skeleton {
+  width: 75%;
+}
+
+.lists ul li p.pack-skeleton:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.lists detail.pack-skeleton {
+  width: calc(100% - 5rem);
+  max-width: calc(var(--safezone-width) - 5rem);
+  /* width: 30%; */
+  margin: 0.5rem auto;
+}
+
+.lists detail.pack-skeleton + detail.pack-skeleton {
+  margin: 0.5rem auto;
+}
+
+@keyframes skeleton-move-right {
+  from { background-position: -200% 0; }
+  to   { background-position: 0 0; }
+}
+
+@keyframes skeleton-move-left {
+  from { background-position: 0 0; }
+  to   { background-position: -200% 0; }
+}

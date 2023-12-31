@@ -1,0 +1,64 @@
+.neck {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: scaleX(-1);
+  translate: -50% 0;
+  background: url(images/protogen/neck.png) no-repeat center top / contain;
+}
+
+.head {
+  position: absolute;
+  bottom: 87.5%;
+  left: -50px;
+  width: 206px;
+  height: 206px;
+  transform: rotate(calc(-15deg * var(--mouse-progress-y)));
+  transform-origin: 60% 100%;
+  background: url(images/protogen/head.png) no-repeat center top / contain;
+  transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 1.3);
+}
+
+.visor {
+  -webkit-mask: url(images/protogen/head_mask.svg) no-repeat center top / contain;
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 136px;
+  height: 94px;
+  mask: url(images/protogen/head_mask.svg) no-repeat center top / contain;
+}
+
+#eyes {
+  position: absolute;
+  right: 25%;
+  bottom: 48%;
+  width: 174px;
+  transform: translate(calc(-8px * var(--mouse-progress-x)), calc(5px * var(--mouse-progress-y)));
+  transform-origin: bottom center;
+}
+
+#mouth {
+  position: absolute;
+  right: 35%;
+  bottom: -7%;
+  width: 161px;
+  height: 48px;
+  object-fit: contain;
+  transform: translate(calc(-5px * var(--mouse-progress-x)), calc(10px * var(--mouse-progress-y)));
+  transform-origin: 50% 30%;
+  transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 2);
+}
+
+#nose {
+  position: absolute;
+  bottom: 25%;
+  left: -5%;
+  width: 28px;
+  height: 10px;
+  transform: translate(calc(-7px * var(--mouse-progress-x)), calc(5px * var(--mouse-progress-y)));
+  transform-origin: top center;
+  transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 2);
+}

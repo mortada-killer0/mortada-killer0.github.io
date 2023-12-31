@@ -1,0 +1,168 @@
+.bb-achievement {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 36rem;
+  height: 7.5rem;
+  overflow: hidden;
+  transform: translateX(calc(-100% - 2rem));
+  translate: 0 -50%;
+  border-radius: 0 0.6rem 0.6rem 0;
+  background-color: #00ddff;
+  box-shadow: 0 1.2rem 2.4rem rgba(0,0,0,0.2);
+  transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.5s;
+}
+
+.bb-achievement.visible {
+  visibility: visible;
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+.bb-achievement::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 0.5rem);
+  height: 100%;
+
+  transform: translateX(-100%);
+  border-radius: 0.6rem;
+  background-color: #00a0e8;
+  content: '';
+  transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.375s;
+}
+
+.bb-achievement.visible::before {
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.15s;
+}
+
+.bb-achievement::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 1.5rem);
+  height: 100%;
+
+  transform: translateX(-100%);
+  border-radius: 0.6rem;
+  background-color: var(--accent-color);
+  content: '';
+  transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.15s;
+}
+
+.bb-achievement.visible::after {
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.375s;
+}
+
+.bb-achievement .content {
+  box-sizing: border-box;
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  width: calc(100% - 3rem);
+  height: 100%;
+  padding: 1rem;
+  gap: 1rem;
+
+  transform: translateX(-100%);
+  border-radius: 0 0.6rem 0.6rem 0;
+  background-color: var(--background-plus);
+  content: '';
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+.bb-achievement.visible .content {
+  transform: translateX(0);
+  transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s;
+}
+
+.bb-achievement .content .keyart {
+  flex-shrink: 0;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 1rem;
+  background-color: #858585;
+}
+
+.bb-achievement .content .text-holder {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bb-achievement .content .text-holder .title {
+  height: 1.5rem;
+  transform-origin: left;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.bb-achievement.visible .content .text-holder .title {
+  animation: achievement-title 2s ease 0.5s;
+}
+
+@keyframes achievement-title {
+  0% {
+    transform: scale(1.45);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bb-achievement .content .text-holder .name {
+  height: 2.2rem;
+
+  margin-bottom: -2.2rem;
+  transform: translateY(3rem);
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.bb-achievement.visible .content .text-holder .name {
+  margin-bottom: 0;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.5s ease 2s;
+}
+
+.bb-achievement .content .text-holder .points {
+  height: 2rem;
+
+  margin-bottom: -2rem;
+  padding-inline-start: 2.5rem;
+  transform: translateY(3rem);
+  background: url(achievements/images/orchid_point.png) no-repeat left center / 2rem;
+  color: var(--text-color-faded);
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.bb-achievement.visible .content .text-holder .points {
+  margin-bottom: 0;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.5s ease 2s;
+}

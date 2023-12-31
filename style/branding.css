@@ -1,0 +1,46 @@
+@font-face {
+  src: url(/fonts/ReadexPro-VariableFont_HEXP.ttf);
+  font-family: 'Orchid Logo';
+}
+
+.copyright-text-holder {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 250px;
+  max-width: 480px;
+  margin-inline-end: auto;
+  padding: 10px 0;
+  padding-inline-start: 15px;
+}
+
+.copyright-text-holder .logo {
+  flex-shrink: 0;
+  height: 50px;
+  margin-inline-end: 10px;
+  color: var(--text-color-faded);
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 50px;
+  font-family: 'Orchid Logo';
+  text-decoration: none;
+}
+
+.copyright-text-holder p {
+  margin: 0 0 1rem;
+  color: var(--text-color);
+  font-size: 1.6rem;
+}
+
+.copyright-text-holder .social-media {
+  display: flex;
+  gap: 10px;
+}
+
+.copyright-text-holder .social-media > a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(images/close.png) no-repeat center / cover;
+}

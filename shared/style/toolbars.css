@@ -1,0 +1,41 @@
+footer[role="toolbar"] {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: calc(4.5rem + var(--software-buttons-height));
+  margin-top: calc(var(--software-buttons-height) * -1);
+  padding: 0.5rem 0.5rem var(--software-buttons-height);
+  gap: 0.5rem;
+}
+
+footer[role="toolbar"] .safezone {
+  display: flex;
+  width: 100%;
+  max-width: calc(var(--safezone-width) - 1rem);
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+footer[role="toolbar"] button {
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: var(--text-color);
+  text-align: center;
+}
+
+footer[role="toolbar"] button:hover {
+  background-color: var(--item-hover);
+}
+
+footer[role="toolbar"] button:active {
+  background-color: var(--item-active);
+  color: var(--text-color-faded);
+}
+
+footer[role="toolbar"] button[data-icon]::before {
+  position: static;
+}

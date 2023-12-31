@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snackbar</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../layout.css">
+  <link rel="stylesheet" type="text/css" href="../snackbars.css">
+  <script>
+    document.onkeydown = function () {
+      document.querySelector('.snackbar').classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <div class="snackbar">
+      <div class="label">Alarm set to ring in <b>15 minutes</b></div>
+    </div>
+  </div>
+</body>
+</html>

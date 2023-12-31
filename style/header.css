@@ -1,0 +1,25 @@
+@font-face {
+  src: url(/fonts/ReadexPro-VariableFont_HEXP.ttf);
+  font-family: 'Orchid Logo';
+}
+
+#web header {
+  margin: calc(1rem * (1 - var(--progress, 0))) auto;
+}
+
+#web header .logo {
+  font-weight: 500;
+  font-size: calc(2rem + (1.2rem * (1 - var(--progress, 0))) + (0.6rem * var(--overscroll-progress, 0)));
+  font-family: 'Orchid Logo';
+  transition: font-size 0.3s ease;
+}
+
+#web header h1 {
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #web header nav {
+    display: none;
+  }
+}

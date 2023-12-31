@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value Selector</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css">
+  <link rel="stylesheet" type="text/css" href="../icons/icons.css">
+  <link rel="stylesheet" type="text/css" href="../layout.css">
+  <link rel="stylesheet" type="text/css" href="../object_menu.css">
+  <link rel="stylesheet" type="text/css" href="../checkboxes.css">
+  <link rel="stylesheet" type="text/css" href="../switches.css">
+  <link rel="stylesheet" type="text/css" href="../radios.css">
+</head>
+
+<body>
+  <form role="dialog" data-type="object">
+    <header>
+      <h1>Value Selector</h1>
+    </header>
+    <section>
+      <ul>
+        <li>
+          List Item
+        </li>
+        <li>
+          <p>Paragraph List Item</p>
+        </li>
+        <li class="selected">
+          <p>Selected List Item</p>
+        </li>
+        <li>
+          <p>Paragraph List Item</p>
+          <p>Second paragraph</p>
+        </li>
+      </ul>
+
+      <header>Switches</header>
+      <ul>
+        <li>
+          <div class="pack-switch">
+            <label for="switch1">
+              <p>Switch off</p>
+            </label>
+            <span>
+              <input type="checkbox" name="switch1" id="switch1">
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="pack-switch">
+            <label for="switch2">
+              <p>Switch on</p>
+            </label>
+            <span>
+              <input type="checkbox" name="switch2" id="switch2" checked>
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <header>Checkboxes</header>
+      <ul>
+        <li>
+          <div class="pack-checkbox">
+            <label for="checkbox1">
+              <p>Checkbox off</p>
+            </label>
+            <span>
+              <input type="checkbox" name="checkbox1" id="checkbox1">
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="pack-checkbox">
+            <label for="checkbox2">
+              <p>Checkbox on</p>
+            </label>
+            <span>
+              <input type="checkbox" name="checkbox2" id="checkbox2" checked>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="pack-checkbox danger">
+            <label for="checkbox3">
+              <p>Danger checkbox on</p>
+            </label>
+            <span>
+              <input type="checkbox" name="checkbox3" id="checkbox3" checked>
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <header>Radios</header>
+      <ul>
+        <li>
+          <div class="pack-radio">
+            <label for="radio1">
+              <p>Radio off</p>
+            </label>
+            <span>
+              <input type="radio" name="radio" id="radio1">
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="pack-radio">
+            <label for="radio2">
+              <p>Radio on</p>
+            </label>
+            <span>
+              <input type="radio" name="radio" id="radio2" checked>
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="pack-radio danger">
+            <label for="radio3">
+              <p>Danger radio</p>
+            </label>
+            <span>
+              <input type="radio" name="radio" id="radio3">
+            </span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <menu>
+      <button>Cancel</button>
+      <button class="recommend">Select</button>
+    </menu>
+  </form>
+</body>
+
+</html>

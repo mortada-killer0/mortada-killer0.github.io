@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Panel</title>
+  <link rel="stylesheet" type="text/css" href="../../../default_theme/style/index.css" />
+  <link rel="stylesheet" href="../icons/icons.css" />
+  <link rel="stylesheet" href="../layout.css" />
+  <link rel="stylesheet" href="../headers.css" />
+  <link rel="stylesheet" href="../lists.css" />
+  <link rel="stylesheet" href="../card_panels.css" />
+  <script defer type="text/javascript" src="../../js/card_panels.js"></script>
+  <script defer type="text/javascript" src="../../js/panels.js"></script>
+  <style>
+    body,
+    html {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="card-panel visible">
+      <div class="card">
+        <div class="handle"></div>
+        <div class="content">
+          <div class="panel visible">
+            <div class="headerbar compact">
+              <div class="safezone">
+                <a href="#" data-icon="close"></a>
+                <h1>Card Panel</h1>
+              </div>
+            </div>
+            <div class="content lists">
+              <ul>
+                <li>
+                  <p>Lorem Ipsum</p>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nihil deleniti repellendus natus, magni
+                    vero doloremque repellat dicta expedita excepturi placeat fuga obcaecati esse architecto non assumenda
+                    eaque amet corporis.</p>
+                </li>
+              </ul>
+              <header>List Items</header>
+              <ul>
+                <li>
+                  <p>I'm clickable</p>
+                </li>
+                <li class="noclick">
+                  <p>I'm not clickable</p>
+                </li>
+                <li>
+                  <p>I'm clickable too</p>
+                  <p>And also with a description</p>
+                </li>
+                <li>
+                  <p>I'm also clickable</p>
+                  <p>And also with a description</p>
+                  <p>And a another</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

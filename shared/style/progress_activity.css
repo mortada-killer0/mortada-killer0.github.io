@@ -1,0 +1,51 @@
+progress:not([value]) {
+  -webkit-mask: url(progress_activity/images/spinner.svg) no-repeat center / cover;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--accent-color);
+  mask: url(progress_activity/images/spinner.svg) no-repeat center / cover;
+}
+
+progress:not([value])::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress[value] {
+  width: calc(100% - 3rem);
+  max-width: calc(var(--safezone-width) - 3rem);
+  height: 0.5rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: var(--item-plus);
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress[value]::-webkit-progress-value,
+progress[value].pack-activity {
+  background-size: 200%;
+  background-color: var(--accent-color);
+}
+html[dir="ltr"] progress[value]::-webkit-progress-value,
+html[dir="ltr"] progress[value].pack-activity {
+  background-image: linear-gradient(135deg, transparent, var(--accent-color-minus) 10%, transparent);
+  animation: 1.5s move-right linear infinite;
+}
+html[dir="rtl"] progress[value]::-webkit-progress-value,
+html[dir="rtl"] progress[value].pack-activity {
+  background-image: linear-gradient(-135deg, transparent, var(--accent-color-minus) 90%, transparent);
+  animation: 1.5s move-left linear infinite;
+}
+
+@keyframes move-right {
+  from { background-position: 200% 0; }
+  to   { background-position: 0 0; }
+}
+
+@keyframes move-left {
+  from { background-position: 0 0; }
+  to   { background-position: -200% 0; }
+}

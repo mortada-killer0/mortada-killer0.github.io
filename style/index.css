@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+}
+
+[role="app"] {
+  --safezone-width: 128rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.main-row {
+  box-sizing: border-box;
+  max-width: var(--safezone-width);
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-cols {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 7rem);
+}
+
+.portfolio-cols > .col {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-cols .primary {
+  width: 36rem;
+}
+
+.portfolio-cols .secondary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio-cols h1 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 1.5rem;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 4rem;
+}
+
+.portfolio-cols p {
+  box-sizing: border-box;
+  margin: 0 0 1rem;
+  padding: 0 1.5rem;
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: 1.6rem;
+}

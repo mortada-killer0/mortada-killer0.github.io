@@ -1,0 +1,15 @@
+.ripple {
+  position: absolute;
+  transform: scale(0);
+  border-radius: 50%;
+  background-image: radial-gradient(circle at 50% 50%, var(--ripple-color), transparent 70%);
+  animation: rippleEffect 1.5s cubic-bezier(0.2, 0.9, 0.1, 1);
+  pointer-events: none;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
