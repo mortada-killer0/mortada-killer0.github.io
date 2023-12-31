@@ -32,27 +32,27 @@ function blink() {
   }
 
   setTimeout(() => {
-    eyes.style.transition = 'scale 0.1s ease';
+    eyes.style.transition = 'scale 0.2s cubic-bezier(0.5, 0.8, 0, 1)';
     eyes.style.scale = '1 0.25';
     setTimeout(() => {
       eyes.style.transition = '';
       eyes.style.scale = '1 1';
       eyes.src = '/style/images/protogen/eyes_closed.png';
       setTimeout(() => {
-        eyes.style.scale = '1 0.25';
+        eyes.style.scale = '1 0.5';
         setTimeout(() => {
-          eyes.style.transition = 'scale 0.1s ease';
+          eyes.style.transition = 'scale 0.2s cubic-bezier(0.5, 0.8, 0, 1)';
         }, 1);
         if (isGiggly) {
-          eyes.src = '/style/images/protogen/eyes_open.png';
-        } else {
           eyes.src = '/style/images/protogen/eyes_smiley_open.png';
+        } else {
+          eyes.src = '/style/images/protogen/eyes_open.png';
         }
         setTimeout(() => {
           eyes.style.transition = '';
           eyes.style.scale = '1 1';
         }, 110);
-      }, 50);
+      }, 100);
     }, 100);
     blink();
   }, 5000 * Math.random());
@@ -61,11 +61,10 @@ function blink() {
 function giggle() {
   isGiggly = true;
   mouth.style.transition = 'scale 0.3s cubic-bezier(0.5, 0.8, 0, 1)';
-  mouth.style.scale = '1 2';
   mouth.src = '/style/images/protogen/mouth_smile.png';
   setTimeout(() => {
     mouth.style.transition = '';
-    mouth.style.scale = '1 1';
+    mouth.style.scale = '1 0.75';
     mouth.src = '/style/images/protogen/mouth_open.png';
     eyes.src = '/style/images/protogen/eyes_smiley_open.png';
 
@@ -76,8 +75,8 @@ function giggle() {
       head.style.transition = 'rotate 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.5) 0.075s';
     }, 1);
     setTimeout(() => {
-      mouth.style.scale = '1 0.5';
-      mouth.style.translate = '0 0';
+      mouth.style.scale = '1 0.75';
+      mouth.style.translate = '0 5%';
       nose.style.translate = '0 -50%';
       eyes.style.translate = '0 -20%';
       head.style.rotate = '1deg';
@@ -88,8 +87,8 @@ function giggle() {
         eyes.style.translate = '0 0';
         head.style.rotate = '-1deg';
         setTimeout(() => {
-          mouth.style.scale = '1 0.5';
-          mouth.style.translate = '0 0';
+          mouth.style.scale = '1 0.75';
+          mouth.style.translate = '0 5%';
           nose.style.translate = '0 -50%';
           eyes.style.translate = '0 -20%';
           head.style.rotate = '1deg';
@@ -100,8 +99,8 @@ function giggle() {
             eyes.style.translate = '0 0';
             head.style.rotate = '-1deg';
             setTimeout(() => {
-              mouth.style.scale = '1 0.5';
-              mouth.style.translate = '0 0';
+              mouth.style.scale = '1 0.75';
+              mouth.style.translate = '0 5%';
               nose.style.translate = '0 -50%';
               eyes.style.translate = '0 -20%';
               head.style.rotate = '1deg';
@@ -111,18 +110,15 @@ function giggle() {
                 nose.style.translate = '0 0';
                 eyes.style.translate = '0 0';
                 head.style.rotate = '0deg';
-              }, 200);
-            }, 200);
-          }, 200);
-        }, 200);
-      }, 200);
-    }, 200);
+              }, 120);
+            }, 120);
+          }, 120);
+        }, 120);
+      }, 120);
+    }, 120);
     setTimeout(() => {
-      mouth.style.scale = '1 2';
-      mouth.src = '/style/images/protogen/mouth_smile.png';
-      setTimeout(() => {
-        mouth.style.transition = 'all 0.3s cubic-bezier(0.5, 0.8, 0, 1)';
-      }, 1);
+      mouth.style.transition = 'all 0.4s cubic-bezier(0.2, 0.9, 0.1, 1)';
+      mouth.style.scale = '1 0.75';
       setTimeout(() => {
         mouth.style.transition = '';
         nose.style.transition = '';
@@ -130,9 +126,9 @@ function giggle() {
         mouth.style.translate = '0 0';
         mouth.src = '/style/images/protogen/mouth_closed.png';
         isGiggly = false;
-      }, 110);
-    }, 2000);
-  }, 150);
+      }, 300);
+    }, 120 * 7);
+  }, 200);
 }
 
 blink();
