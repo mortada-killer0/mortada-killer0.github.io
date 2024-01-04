@@ -109,6 +109,7 @@
   height: 10px;
   transform: translate(calc(-7px * var(--mouse-progress-x)), calc(5px * var(--mouse-progress-y)));
   transform-origin: top center;
+  pointer-events: all;
   transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 2);
 }
 

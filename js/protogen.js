@@ -122,6 +122,7 @@ function giggle() {
       setTimeout(() => {
         mouth.style.transition = '';
         nose.style.transition = '';
+        head.style.transition = '';
         mouth.style.scale = '1 1';
         mouth.style.translate = '0 0';
         mouth.src = '/style/images/protogen/mouth_closed.png';
